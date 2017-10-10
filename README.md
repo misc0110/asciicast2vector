@@ -39,3 +39,10 @@ asciicast2vector can also output the image as LaTeX TikZ drawings. Per default, 
 
 To output the picture only (without the document structure), use the `-c` parameter: `python asciicast2vector.py recording.json -t tikz -c > output.tikz`.
 Bear in mind that you require a definition for the colors `ansi0` to `ansi15` if you do not output the full document. 
+
+# Limitations
+
+ * Some ANSI Escape sequences are not implemented (see http://www.inwap.com/pdp10/ansicode.txt for an extensive list)
+ * Only a single frame can be rendered, animations are not supported (yet)
+ * The resulting vector graphic is quite large, as every character is drawn individually
+ 
