@@ -5,7 +5,7 @@ import json
 import sys
 from optparse import OptionParser
 
-options = OptionParser(usage='%prog recording.json [options]', description='Converter for asciinema recording to vector graphic')
+options = OptionParser(usage='%prog recording.json [options]', description='Converter for asciicast (asciinema recording) to vector graphic')
 options.add_option('-s', '--start', type='int', default=-1, help='Start frame (default: first)')
 options.add_option('-e', '--end', type='int', default=-1, help='End frame (default: last)')
 options.add_option('-o', '--out', type='str', default='-', help='Filename to write vector graphic to (default: stdout)')
@@ -316,7 +316,7 @@ class ANSIParser:
         print("Frames: %d" % len(self.meta["stdout"]))
         print("Terminal (columns x rows): %d x %d" % (self.width, self.height))
         print("")
-        print("asciinema version: %d" % (self.meta["version"]))
+        print("asciicast version: %d" % (self.meta["version"]))
         print("Environment: %s" % str(self.meta["env"]))
         print("Duration: %.2fs" % self.meta["duration"])
     
@@ -456,7 +456,7 @@ class ANSIParser:
 def main():
     opts, args = options.parse_args()
     if opts.version:
-        print("asciinema2vector 1.0")
+        print("asciicast2vector 1.0")
         return
 
     if len(args) < 1:

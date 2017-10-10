@@ -1,14 +1,14 @@
-## asciinema2vector
+## asciicast2vector
 
-Convert [asciinema](https://github.com/asciinema/asciinema) recordings to vector graphics (SVG and TikZ).
+Convert asciicast ([asciinema](https://github.com/asciinema/asciinema) recordings) to vector graphics (SVG and TikZ).
 
-![nano demo](https://raw.github.com/misc0110/asciinema2vector/master/screenshots/demo.png)
+![nano demo](https://raw.github.com/misc0110/asciicast2vector/master/screenshots/demo.png)
 
 # Usage
 
-Running asciinema2vector without arguments shows the following help:
+Running asciicast2vector without arguments shows the following help:
 ```
-Usage: asciinema2vector.py recording.json [options]
+Usage: asciicast2vector.py recording.json [options]
 
 Converter for asciinema recording to vector graphic
 
@@ -25,3 +25,17 @@ Options:
   -q, --query           Show information about the JSON file and exit
 ```
 
+Without paramaters, asciicast2vector combines all frames, from the first to the last, and generates an SVG. 
+To render only certain frames, the `-s` and `-e` parameters can be used. 
+For example, to render frame 10 to 12, run `python asciicast2vector.py recording.json -s 10 -e 12 > output.svg`.
+
+## SVG
+
+The default output format is SVG. The resulting image can be directly used in browsers, or further modified using vector drawing programs (e.g., Inkscape).
+
+## TikZ
+
+asciicast2vector can also output the image as LaTeX TikZ drawings. Per default, the output is a standalone LaTeX document which can be compiled using `pdflatex`. 
+
+To output the picture only (without the document structure), use the `-c` parameter: `python asciicast2vector.py recording.json -t tikz -c > output.tikz`.
+Bear in mind that you require a definition for the colors `ansi0` to `ansi15` if you do not output the full document. 
