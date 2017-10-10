@@ -2,7 +2,7 @@
 
 Convert [asciinema](https://github.com/asciinema/asciinema) recordings to vector graphics (SVG and TikZ).
 
-![nano demo](https://raw.github.com/misc0110/asciinema2terminal/master/screenshots/demo.svg)
+![nano demo](https://raw.github.com/misc0110/asciinema2vector/master/screenshots/demo.svg)
 
 # Usage
 
